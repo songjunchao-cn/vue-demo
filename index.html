@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue入门</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+      <!-- 挂载点 -->
+    <div id="hello">
+    <!-- 挂载点内的内容是模版 -->
+    <h1 v-on:click="handleClick">{{content}}</h1>
+    <!-- v-on:简写位@ -->
+    </div>
+    <!-- 挂载点，实例，模版之间的关系 -->
+    <script>
+    // 实例用于整合数据
+      new Vue(
+        {
+          el:"#hello",
+          data:{
+            content: "hello world"
+          },
+          methods: {
+            handleClick:function(){
+            this.content="world"
+          }
+        }
+        }
+      )
+    </script>
+  </body>
+</html>
